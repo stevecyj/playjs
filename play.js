@@ -15,3 +15,13 @@ function loop(n, ...any) {
 }
 
 loop(500, a, b, c);
+
+function wallet(r) {
+    let box = r;
+    return function (fn) {
+        box = fn(box)
+        return box;
+    }
+}
+
+let jobs = wallet(1000);
